@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliVision - Página Inicial</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .logo {
+            animation: slideDown 1.5s ease-out; /* Animação de deslizar para baixo */
+        }
+
+        .logo img {
+            width: 800px;
+            height: auto;
+            margin-bottom: 50px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 70px;
+            animation: fadeIn 2s ease-in-out; /* Animação de fade-in */
+        }
+
+        .button {
+            text-decoration: none;
+            background-color: #6a11cb;
+            padding: 30px 60px;
+            font-size: 2em;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: bounceIn 2s ease-out; /* Animação de bounce-in */
+        }
+
+        .button img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .button:hover {
+            background-color: #2575fc;
+            transform: scale(1.1); /* Expansão maior ao passar o mouse */
+            animation: pulse 1s infinite; /* Animação de pulsar */
+        }
+
+        /* Animações */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://cdn.discordapp.com/attachments/1178404403590467724/1288554586709164044/image.png?ex=66f59b79&is=66f449f9&hm=a98c7f73c0cc7cf004dda77dd02c840763a9ceac1d8f75cb607a51f489b8db85&" alt="Logo da Empresa">
+    </div>
+    <div class="button-container">
+        <a href="/controle_de_fluxo" class="button">
+            <img src="https://cdn-icons-png.flaticon.com/512/4596/4596136.png" alt="Controle de Fluxo">
+            <br>Controle de Fluxo
+        </a>
+        <a href="/monitoramento" class="button">
+            <img src="https://cdn-icons-png.flaticon.com/512/1231/1231124.png" alt="Monitoramento de Frequência">
+            <br>Monitoramento de Frequência
+        </a>
+    </div>
+</body>
+</html>

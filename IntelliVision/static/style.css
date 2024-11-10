@@ -1,0 +1,19 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #343a40;
+}
+
+.video-container {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+#status {
+    font-size: 2rem;
+}

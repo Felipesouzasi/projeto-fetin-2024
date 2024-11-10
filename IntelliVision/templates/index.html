@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Fluxo</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .logo img {
+            width: 364px;
+            height: 82px;
+        }
+
+        h1 {
+            font-size: 6em;
+            margin: 0;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .subtitle {
+            font-size: 2.5em;
+            margin: 20px 0 40px;
+            color: #a06cd5;
+            animation: fadeIn 2.5s ease-out;
+        }
+
+        .input-container {
+            text-align: center;
+            animation: fadeInUp 3s ease-out;
+        }
+
+        .input-container input {
+            padding: 20px 40px;
+            font-size: 2em;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .input-container input:focus {
+            transform: scale(1.1);
+        }
+
+        .input-container input::placeholder {
+            color: #ddd;
+        }
+
+        .input-container button {
+            padding: 20px 50px;
+            font-size: 2.5em;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease-in-out;
+            margin-top: 25px;
+        }
+
+        .input-container button:hover {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+            transform: scale(1.05);
+        }
+
+        #video-container {
+            display: none;
+            position: relative;
+            animation: fadeIn 3s ease-out;
+        }
+
+        #video-container video {
+            width: 100%;
+            height: auto;
+            border: 5px solid #6f42c1;
+            border-radius: 15px;
+        }
+
+        #form-container {
+            text-align: center;
+            animation: fadeIn 3s ease-out;
+        }
+
+        #totalPessoas, #cntDown, #status {
+            font-size: 3em;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://cdn.discordapp.com/attachments/1178404403590467724/1288554712232362114/image.png?ex=66f59b97&is=66f44a17&hm=8ab8baefa77c71622ce7a0c39c8072274c6106f8a64893886438c10033112f2d&" alt="Logo da Empresa">
+    </div>
+    <div id="form-container">
+        <h1>Controle de Fluxo</h1>
+        <p class="subtitle">Entre com o número máximo de pessoas permitidas:</p>
+        <div class="input-container">
+            <input type="number" id="maxPessoas" placeholder="Máximo de pessoas" required>
+            <br>
+            <button id="startBtn">Iniciar</button>
+        </div>
+    </div>
+    <div id="video-container">
+        <h2 style="font-size: 2em;">Contagem de Pessoas presentes no Local: <span id="totalPessoas">0</span></h2>
+        <h2 style="font-size: 2em;">Total de Pessoas que já estiveram no Local: <span id="cntDown">0</span></h2>
+        <h1 id="status"></h1>
+        <img id="video" src="{{ url_for('video_feed') }}" alt="Video Feed">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="static/script.js"></script>
+</body>
+</html>
